@@ -12,7 +12,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="m-5 min-h-screen bg-[#d9d9da] rounded-xl">
+    <section className="m-5 md:min-h-screen bg-[#d9d9da] rounded-xl">
       <div className="flex flex-col items-center">
         <h1 className="text-5xl m-5">Courses We Offer</h1>
 

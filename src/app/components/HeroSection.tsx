@@ -1,7 +1,7 @@
 import React from "react";
 import FormComponent from "./FormComponent";
 import Image from "next/image";
-import Bacha from "../../../public/ChatGPT Image Nov 18, 2025, 11_03_41 PM.png";
+import Bacha from "../../../public/Screenshot (60).png";
 
 export default function HeroSection() {
   return (
@@ -25,20 +25,18 @@ export default function HeroSection() {
         <FormComponent />
       </div>
 
-      {/* IMAGE SECTION */}
-      <div className="relative flex justify-center items-center mt-10 md:mt-0 md:mr-10">
-        {/* Circle */}
-        <div className="relative w-52 h-52 md:w-80 md:h-80 bg-orange-500 rounded-full"></div>
-
-        {/* Boy popping out */}
+      {/* IMAGE SECTION (single merged kid+circle image) */}
+      <div className="flex justify-center items-center mt-10 md:mt-0 md:mr-10">
         <Image
           src={Bacha}
-          alt="winner"
+          alt="kid illustration"
           className="
-            absolute
-            bottom-0
-            w-[180px] 
-            md:w-[300px]
+            w-[55vw]
+            max-w-[320px]
+            min-w-[150px]
+            h-auto
+            md:w-[350px]
+            object-contain
           "
         />
       </div>

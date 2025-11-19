@@ -2,7 +2,7 @@ import React from "react";
 
 export default function VideoComponent() {
   return (
-    <div className="flex w-full min-h-[80vh] pr-5 overflow-x-hidden">
+    <div className="flex w-full md:min-h-[80vh] pr-5 overflow-x-hidden">
       
       <div className="flex items-center justify-center ml-5 bg-orange-500 rounded-xl max-h-[75vh] w-[70vw] shadow-[0_4px_10px_rgba(0,0,0,0.25)]">
         <p>Video placeholder</p>
