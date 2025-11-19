@@ -9,13 +9,16 @@ import Footer from "./components/Footer";
 
 export default function Home() {
 	return (
-		<div>
+		<div className="" >
 			<Navbar/>
+
 			<HeroSection/>
 			<VideoComponent/>
 			<SwiperSection/>
 			<AltComponent/>
+			<PricingSection/>
 			{/* overflow tag */}<Footer/>
+	
 		</div>
 	);
 }
