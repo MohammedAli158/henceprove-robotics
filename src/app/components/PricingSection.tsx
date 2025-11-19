@@ -14,9 +14,8 @@ export default function PricingSection() {
   return (
     <section className="m-5 md:min-h-screen bg-[#d9d9da] rounded-xl">
       <div className="flex flex-col items-center">
-        <h1 className="text-5xl m-5">Courses We Offer</h1>
+        <h1 className="text-4xl md:text-5xl m-5 font-bold">Courses We Offer</h1>
 
-        {/* Responsive grid */}
         <div
           className="
             grid 
@@ -29,65 +28,61 @@ export default function PricingSection() {
             mt-10
           "
         >
-          {cardDetails.map((k, i) => {
-            return (
-              <div
-                key={i}
+          {cardDetails.map((k, i) => (
+            <div
+              key={i}
+              className="
+                flex flex-col 
+                items-center 
+                bg-orange-400 
+                text-white 
+                rounded-xl 
+                border border-white border-dashed
+                shadow-[0_4px_10px_rgba(0,0,0,0.55)]
+                relative
+                p-5
+                min-h-fit          /* Allow natural height on mobile */
+                md:min-h-[70vh]    /* Taller structured look on desktop */
+              "
+            >
+              <h1 className="text-2xl md:text-4xl text-center font-semibold">
+                {k.title}
+              </h1>
+
+              <Image
+                src={k.img}
+                alt="course image"
                 className="
-                  min-h-[76vh]
-                  border border-white border-dashed 
                   rounded-xl 
-                  bg-orange-400 
+                  w-full 
+                  h-48           /* Fixed good height for mobile */
+                  md:h-60         /* Taller for desktop */
+                  object-cover 
+                  mt-5
+                "
+              />
+
+              <p className="mt-5 text-center text-sm md:text-base leading-relaxed px-1">
+                Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
+                consectetur. Lorem ipsum dolor sit amet consectetur.
+              </p>
+
+              <p
+                className="
+                  px-5 py-2
+                  bg-black 
                   text-white 
-                  flex flex-col 
-                  items-center 
-                  relative 
-                  shadow-[0_4px_10px_rgba(0,0,0,0.55)]
-                  px-4
-                  pt-5
+                  rounded-xl 
+                  cursor-pointer 
+                  text-sm md:text-lg
+                  mt-4
+                  self-end
                 "
               >
-                <h1 className="text-3xl md:text-4xl text-center">{k.title}</h1>
-
-                <Image
-                  src={k.img}
-                  alt="course image"
-                  className="
-                    rounded-xl 
-                    w-full 
-                    max-h-[30vh] 
-                    object-cover 
-                    mt-5
-                  "
-                />
-
-                <p className="m-5 text-center">
-                  Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit
-                  amet consectetur. Lorem ipsum dolor sit amet consectetur.
-                </p>
-
-                <p
-                  className="
-                    h-12 
-                    px-5
-                    absolute 
-                    bottom-5 
-                    right-5 
-                    bg-black 
-                    text-white 
-                    flex 
-                    items-center 
-                    justify-center 
-                    rounded-xl 
-                    cursor-pointer 
-                    text-sm md:text-base
-                  "
-                >
-                  {k.price}
-                </p>
-              </div>
-            );
-          })}
+                {k.price}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

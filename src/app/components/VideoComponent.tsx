@@ -2,14 +2,22 @@ import React from "react";
 
 export default function VideoComponent() {
   return (
-    <div className="flex w-full md:min-h-[80vh] pr-5 overflow-x-hidden">
+    <div className="flex flex-col md:flex-row w-full md:min-h-[80vh] pr-5 overflow-x-hidden">
       
-      <div className="flex items-center justify-center ml-5 bg-orange-500 rounded-xl max-h-[75vh] w-[70vw] shadow-[0_4px_10px_rgba(0,0,0,0.25)]">
+      <div
+        className="
+          flex items-center justify-center 
+          mx-5 bg-orange-500 rounded-xl 
+          h-[30vh] md:h-auto 
+          w-full md:w-[70vw]
+          shadow-[0_4px_10px_rgba(0,0,0,0.25)]
+        "
+      >
         <p>Video placeholder</p>
       </div>
 
-      <div className="ml-5 mt-5 max-w-[30vw]">
-        <h1 className="text-5xl font-bold">
+      <div className="mx-5 mt-5 w-full md:max-w-[30vw]">
+        <h1 className="text-3xl md:text-5xl font-bold">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
         <h3 className="mt-5">

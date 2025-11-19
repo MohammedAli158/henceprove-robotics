@@ -6,16 +6,16 @@ export default function FormComponent() {
   return (
     <div
       className="
-        bg-white mt-5 p-6 rounded-md flex flex-col gap-5 relative
+        bg-white mt-5 p-4 md:p-6 rounded-md flex flex-col gap-4 relative
         w-full max-w-[90vw] md:max-w-[35vw]
-        min-h-[28vh] md:min-h-[30vh]
+        max-h-[40vh] md:max-h-none
         shadow-[0_4px_10px_rgba(0,0,0,0.20)]
       "
     >
       <input
         className="
           pl-3 bg-[#f9fafb] border border-black py-2 
-          w-full md:max-w-[20vw]
+          w-full
           rounded-xl focus:outline-none
         "
         placeholder="Name"
@@ -23,8 +23,8 @@ export default function FormComponent() {
 
       <input
         className="
-          pl-3 bg-[#f9fafb] border border-black py-2
-          w-full md:max-w-[20vw]
+          pl-3 bg-[#f9fafb] border border-black py-2 
+          w-full
           rounded-xl focus:outline-none
         "
         placeholder="Phone Number"
@@ -39,14 +39,12 @@ export default function FormComponent() {
         Reach Us {"->"}
       </button>
 
-      
       <Image
         src={Logo}
         alt="Join"
         className="
-          w-14 h-14 object-contain mt-2 mx-auto
-    md:mx-0 md:absolute md:right-4 md:top-4
-    md:w-20 md:h-20
+          w-10 h-10 md:w-20 md:h-20 object-contain mt-2 mx-auto
+          md:mx-0 md:absolute md:right-4 md:top-4
         "
       />
     </div>
