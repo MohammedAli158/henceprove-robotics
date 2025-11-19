@@ -1,40 +1,53 @@
 import React from 'react'
 import Link from 'next/link'
+
 export default function Navbar() {
   return (
-    <div className="flex items-center relative justify-between px-5 h-[9vh]
-    shadow-[0_4px_10px_rgba(0,0,0,0.25)] 
-      backdrop-blur-md
-      bg-white/30
-      dark:bg-black/30
-      sticky top-0
-      z-50">
-        {/* removed shadow shadow-[0_4px_10px_rgba(0,0,0,0.25)] */}
-  <div className="flex gap-5 absolute left-1/3 ">
-    
-    <Link href="/" >
-    <span  className='cursor-pointer' >HP</span>
-    </Link>
-    
-    <Link href="/" >
-    <span className='cursor-pointer' >About Us</span>
-    </Link>
-    
-    <Link href="/" >
-    <span className='cursor-pointer' >Dashboard</span>
-    </Link>
-    
-    <Link href="/" >
-    <span className='cursor-pointer' >Get Courses</span>
-    </Link>
-  </div>
+    <div className="
+      sticky top-0 z-50
+      flex items-center justify-between
+      px-5 h-[9vh]
+      shadow-[0_4px_10px_rgba(0,0,0,0.25)]
+      backdrop-blur-md bg-white/30 dark:bg-black/30
+    "
+    >
+      
+      {/* LEFT SECTION — LOGO */}
+      <div className="text-lg font-semibold">
+        <Link href="/">HP</Link>
+      </div>
 
-  <input className="border w-[20vw] text-center border-[#d9d9da] p-2 absolute right-25 focus:outline-none rounded-xl" placeholder='Search anything..' />
+      {/* MIDDLE NAV LINKS */}
+      <div className="
+        hidden md:flex gap-6 
+        text-sm font-medium
+      ">
+        <Link href="/">About Us</Link>
+        <Link href="/">Dashboard</Link>
+        <Link href="/">Get Courses</Link>
+      </div>
 
-  
+      {/* RIGHT SIDE — SEARCH + LOGIN */}
+      <div className="flex items-center gap-4">
 
-  <div className='absolute right-5' >Login</div>
-</div>
+        {/* SEARCH BAR */}
+        <input 
+          className="
+            hidden md:block
+            border w-[18vw]
+            text-center border-[#d9d9da]
+            p-2 rounded-xl
+            focus:outline-none
+            bg-white/80
+          "
+          placeholder="Search anything.."
+        />
 
+        {/* LOGIN BUTTON */}
+        <div className="cursor-pointer font-medium">
+          Login
+        </div>
+      </div>
+    </div>
   )
 }
