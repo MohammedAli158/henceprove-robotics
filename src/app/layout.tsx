@@ -1,20 +1,21 @@
-import { Bricolage_Grotesque } from 'next/font/google';
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  weight: '400', // Or your desired weight
-  subsets: ['latin'],
+const dmSans = DM_Sans({
+  weight: ["700", "400", "500"], // Include whatever weights your site needs
+  subsets: ["latin"],
 });
 
-
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body className={`${bricolage.className} antialiased`}>{children}</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={`${dmSans.className} antialiased`}>
+        {children}
+      </body>
+    </html>
+  );
 }

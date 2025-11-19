@@ -33,11 +33,11 @@ export default function MySwiper() {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="w-full max-w-[90%]"
+        className="w-full max-w-[90%] "
       >
         {images.map((img, index) => (
-          <SwiperSlide key={index} className="max-h-[45vh]" >
-            <div className="relative rounded-xl overflow-hidden shadow-lg w-[50vw] h-[40vw] max-h-[400px] max-w-[600px] mx-auto">
+          <SwiperSlide key={index} className="max-h-[45vh] " >
+            <div className="relative rounded-xl overflow-hidden  w-[50vw] h-[40vw] max-h-[400px] max-w-[600px] mx-auto">
               <Image src={img} alt={`slide-${index}`} fill className="max-h-[40vh]" />
             </div>
           </SwiperSlide>
