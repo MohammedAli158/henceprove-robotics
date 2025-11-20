@@ -39,6 +39,7 @@ export default function Navbar() {
             p-2 rounded-xl
             focus:outline-none
             bg-white/80
+            placeholder:black/50
           "
           placeholder="Search anything.."
         />

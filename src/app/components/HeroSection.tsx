@@ -9,13 +9,13 @@ export default function HeroSection() {
 
       {/* TEXT SECTION */}
       <div className="flex flex-col mt-10 md:mt-20 md:ml-10 font-bold flex-1">
-        <h1 className="text-4xl md:text-5xl max-w-[80vw] md:max-w-[50vw] text-black">
+        <h1 className="text-4xl m-5 md:text-5xl max-w-[80vw] md:max-w-[50vw] text-black">
           Turning wild ideas into
           <span className="text-orange-500"> ROBOTS </span>
           that actually move
         </h1>
 
-        <h3 className="max-w-[80vw] md:max-w-[50vw] my-5 font-normal">
+        <h3 className="max-w-[80vw] m-5 dark:text-black md:max-w-[50vw] my-5 font-normal">
           Building the machines your future will depend on, where AI
           <span className="text-orange-500"> Ends </span>
           imagination
