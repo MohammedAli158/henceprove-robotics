@@ -5,11 +5,11 @@ import Bacha from "../../../public/Screenshot (60).png";
 
 export default function HeroSection() {
   return (
-    <div className="relative flex flex-col md:flex-row bg-[#f9fafb] min-h-[90vh]  rounded-md mb-5">
+    <div className="relative flex flex-col md:flex-row bg-[#f9fafb] min-h-[90vh] rounded-md mb-5">
 
       {/* TEXT SECTION */}
       <div className="flex flex-col mt-10 md:mt-20 md:ml-10 font-bold flex-1">
-        <h1 className="text-4xl m-5 md:text-5xl max-w-[80vw] md:max-w-[50vw] text-black">
+        <h1 className="text-4xl m-5 md:text-5xl max-w-[80vw] md:max-w-[50vw] dark:text-black text-black">
           Turning wild ideas into
           <span className="text-orange-500"> ROBOTS </span>
           that actually move

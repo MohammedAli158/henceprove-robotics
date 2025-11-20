@@ -10,7 +10,7 @@ export default function VideoComponent() {
           mx-5 bg-orange-500 rounded-xl 
           h-[20vh] md:h-auto 
           w-full md:w-[70vw]
-          shadow-[0_4px_10px_rgba(0,0,0,0.25)]
+          shadow-[0_4px_10px_rgba(0,0,0,0.25)] mr-5
         "
       >
         <p>Video placeholder</p>
