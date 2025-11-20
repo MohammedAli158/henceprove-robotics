@@ -14,7 +14,7 @@ export default function PricingSection() {
   return (
     <section className="m-5 md:min-h-screen bg-white rounded-xl">
       <div className="flex flex-col items-center">
-        <h1 className="text-4xl md:text-5xl m-5 font-bold">Courses We Offer</h1>
+        <h1 className="text-4xl md:text-5xl m-5 font-bold dark:text-black ">Courses We Offer</h1>
 
         <div
           className="
