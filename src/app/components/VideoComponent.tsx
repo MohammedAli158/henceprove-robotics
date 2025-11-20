@@ -7,9 +7,9 @@ export default function VideoComponent() {
       <div
         className="
           flex items-center justify-center 
-          mx-5 bg-orange-500 rounded-xl 
+           bg-orange-500 rounded-xl 
           h-[20vh] md:h-auto 
-          w-full md:w-[70vw]
+          w-[90vw] mx-5 md:w-[70vw]
           shadow-[0_4px_10px_rgba(0,0,0,0.25)] mr-5
         "
       >

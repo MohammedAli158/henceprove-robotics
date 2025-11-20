@@ -14,7 +14,7 @@ export default function Navbar() {
       "
     >
       {/* LEFT SECTION — LOGO */}
-      <div className="text-lg font-semibold text-black">
+      <div className="text-lg font-semibold text-black dark:text-white">
         <Link href="/">Hence<span className='text-lg font-semibold text-orange-500' >Prove</span></Link>
       </div>
 
