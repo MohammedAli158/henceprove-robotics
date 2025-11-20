@@ -16,7 +16,7 @@ export default function FormComponent() {
         className="
           pl-3 bg-[#f9fafb] border border-black py-2 
           w-full
-          rounded-xl focus:outline-none dark:placeholder-text-black/50
+          rounded-xl focus:outline-none dark:placeholder-text-black/50 placeholder:text-black md:placeholder:text-black/50
         "
         placeholder="Name"
       />
@@ -25,7 +25,7 @@ export default function FormComponent() {
         className="
           pl-3 bg-[#f9fafb] border border-black py-2 
           w-full
-          rounded-xl focus:outline-none placeholder-text-black/50 
+          rounded-xl focus:outline-none placeholder:text-black md:placeholder:text-black/50
         "
         placeholder="Phone Number"
       />
