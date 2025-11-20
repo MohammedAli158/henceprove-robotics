@@ -12,7 +12,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="m-5 md:min-h-screen bg-[#d9d9da] rounded-xl">
+    <section className="m-5 md:min-h-screen bg-white rounded-xl">
       <div className="flex flex-col items-center">
         <h1 className="text-4xl md:text-5xl m-5 font-bold">Courses We Offer</h1>
 
@@ -36,9 +36,11 @@ export default function PricingSection() {
                 items-center 
                 bg-orange-400 
                 text-white 
+                hover:text-black
+                  hover:bg-white
+                  hover:border-black
                 rounded-xl 
                 border border-white border-dashed
-                shadow-[0_4px_10px_rgba(0,0,0,0.55)]
                 relative
                 p-5
                 min-h-fit          /* Allow natural height on mobile */
@@ -55,8 +57,8 @@ export default function PricingSection() {
                 className="
                   rounded-xl 
                   w-full 
-                  h-48           /* Fixed good height for mobile */
-                  md:h-60         /* Taller for desktop */
+                  h-48           
+                  md:h-60         
                   object-cover 
                   mt-5
                 "

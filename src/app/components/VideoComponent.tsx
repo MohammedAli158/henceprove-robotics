@@ -2,7 +2,7 @@ import React from "react";
 
 export default function VideoComponent() {
   return (
-    <div className="flex flex-col md:flex-row w-full md:min-h-[80vh] pr-5 overflow-x-hidden">
+    <div className="flex flex-col md:flex-row w-full md:min-h-[65vh] pr-5 overflow-x-hidden">
       
       <div
         className="

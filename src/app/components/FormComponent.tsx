@@ -25,7 +25,7 @@ export default function FormComponent() {
         className="
           pl-3 bg-[#f9fafb] border border-black py-2 
           w-full
-          rounded-xl focus:outline-none
+          rounded-xl focus:outline-none 
         "
         placeholder="Phone Number"
       />
@@ -33,7 +33,7 @@ export default function FormComponent() {
       <button
         className="
           bg-orange-500 text-white mt-2 px-4 py-2 rounded-xl cursor-pointer
-          md:absolute md:left-8 md:bottom-5 md:mt-0
+           md:left-8 md:bottom-5 md:mt-0
         "
       >
         Reach Us {"->"}

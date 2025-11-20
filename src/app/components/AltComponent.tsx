@@ -4,7 +4,7 @@ import img from "../../../public/swip.jpg";
 
 export default function AltComponent() {
   return (
-    <section className="md:min-h-screen flex flex-col gap-6 m-5 mt-0 bg-gray-200 rounded-xl">
+    <section className="md:min-h-screen flex flex-col gap-6 m-5 mt-0 bg-[#f9fafb] rounded-xl">
       
       {/* 1 */}
       <div className="flex flex-col md:flex-row items-center m-5 p-5 bg-white text-orange-500 rounded-xl border-b border-[#d9d9da] 
