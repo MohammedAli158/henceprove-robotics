@@ -15,7 +15,7 @@ export default function Navbar() {
     >
       {/* LEFT SECTION — LOGO */}
       <div className="text-lg font-semibold text-black dark:text-white">
-        <Link href="/">Hence<span className='text-lg font-semibold text-orange-500' >Prove</span></Link>
+        <Link href="/">HenceProve<span className='text-lg font-semibold text-orange-500' >Robotics</span></Link>
       </div>
 
       {/* PERFECTLY CENTERED NAV LINKS */}
@@ -25,9 +25,9 @@ export default function Navbar() {
           absolute left-1/2 -translate-x-1/2
         "
       >
-        <Link href="/" className='hover:text-red' >About Us</Link>
+        <Link href="/about-us" className='hover:text-red' >About Us</Link>
         <Link href="/" className='hover:text-red' >Dashboard</Link>
-        <Link href="/" className='hover:text-red' >Get Courses</Link>
+        <Link href="/get-courses" className='hover:text-red' >Get Courses</Link>
       </div>
 
       {/* RIGHT SECTION */}

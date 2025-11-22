@@ -1,5 +1,7 @@
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const dmSans = DM_Sans({
   weight: ["700", "400", "500"], // Include whatever weights your site needs
@@ -14,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.className} antialiased`}>
+        <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
