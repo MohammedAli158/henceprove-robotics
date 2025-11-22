@@ -2,13 +2,13 @@ import React from "react";
 
 export default function VideoComponent() {
   return (
-    <div className="flex flex-col md:flex-row w-full md:min-h-[65vh] pr-5 overflow-x-hidden">
+    <div className="flex flex-col md:flex-row w-full md:min-h-auto pr-5 overflow-x-hidden">
       
       <div
         className="
           flex items-center justify-center 
            bg-orange-500 rounded-xl 
-          h-[20vh] md:h-auto 
+          h-[20vh] md:min-h-[40vh] 
           w-[90vw] mx-5 md:w-[70vw]
           shadow-[0_4px_10px_rgba(0,0,0,0.25)] mr-5
         "
