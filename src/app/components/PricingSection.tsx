@@ -12,9 +12,11 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="m-5 md:min-h-autonpm  bg-white rounded-xl " >
-      <div className="flex flex-col items-center">
-        <h1 className="text-4xl md:text-5xl m-5 font-bold dark:text-black ">Courses We Offer</h1>
+    <section className="m-5 bg-white rounded-xl w-full">
+      <div className="flex flex-col items-center w-full max-w-6xl mx-auto px-4">
+        <h1 className="text-4xl md:text-5xl m-5 font-bold dark:text-black text-center">
+          Courses We Offer
+        </h1>
 
         <div
           className="
@@ -24,7 +26,7 @@ export default function PricingSection() {
             lg:grid-cols-3 
             gap-8
             w-full
-            px-6
+            px-0
             mt-10
           "
         >
@@ -37,12 +39,14 @@ export default function PricingSection() {
                 bg-orange-400 
                 text-white 
                 hover:text-black
-                  hover:bg-white
-                  hover:border-black
+                hover:bg-white
+                hover:border-black
                 rounded-xl 
                 border border-white border-dashed
                 relative
                 p-5
+                w-full
+                box-border
                 min-h-fit          
                 md:min-h-[50vh]    
               "
@@ -51,18 +55,21 @@ export default function PricingSection() {
                 {k.title}
               </h1>
 
-              <Image
-                src={k.img}
-                alt="course image"
-                className="
-                  rounded-xl 
-                  w-full 
-                  h-48           
-                  md:h-60         
-                  object-cover 
-                  mt-5
-                "
-              />
+              <div className="w-full mt-5">
+                <Image
+                  src={k.img}
+                  alt="course image"
+                  width={800}
+                  height={480}
+                  className="
+                    rounded-xl 
+                    w-full 
+                    h-48           
+                    md:h-60         
+                    object-cover 
+                  "
+                />
+              </div>
 
               <p className="mt-5 text-center text-sm md:text-base leading-relaxed px-1">
                 Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
