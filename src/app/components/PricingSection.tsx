@@ -3,8 +3,11 @@ import img from "../../../public/images.jpg";
 import imgt from "../../../public/images(2).jpg";
 import imgh from "../../../public/images1).jpg";
 import Image from "next/image";
+import BookButton from "./BookButton";
 
 export default function PricingSection() {
+  const color = ["bg-yellow-200","bg-green-200","bg-pink-200"];
+  const arg = ["Ai class" , "Robotics class" ,"Ai and Robotics"]
   const cardDetails = [
     { title: "Robotics Mastery", id: "CX56G", img, price: "999 USD" },
     { title: "Ai Champion", id: "JHY6D", img: imgh, price: "699 USD" },
@@ -33,13 +36,12 @@ export default function PricingSection() {
           {cardDetails.map((k, i) => (
             <div
               key={i}
-              className="
-                flex flex-col 
+              className={`
+                flex flex-col gap-5
                 items-center 
-                bg-orange-400 
-                text-white 
-                hover:text-black
-                hover:bg-white
+                 
+                text-black
+                
                 hover:border-black
                 rounded-xl 
                 border border-white border-dashed
@@ -49,7 +51,7 @@ export default function PricingSection() {
                 box-border
                 min-h-fit          
                 md:min-h-[50vh]    
-              "
+              ` + color[i]}
             >
               <h1 className="text-2xl md:text-4xl text-center font-semibold">
                 {k.title}
@@ -75,7 +77,9 @@ export default function PricingSection() {
                 Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
                 consectetur. Lorem ipsum dolor sit amet consectetur.
               </p>
-
+                  <div className="" > 
+                    <BookButton/>
+                  </div>
               <p
                 className="
                   px-5 py-2
