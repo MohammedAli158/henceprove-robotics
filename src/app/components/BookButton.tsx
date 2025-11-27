@@ -1,8 +1,10 @@
 // components/BookButton.tsx
+import Link from "next/link";
 import React from "react";
 
 export default function BookButton({ arg = "trial" }: { arg?: string }) {
   return (
+   <Link href="/" >
     <button
       type="button"
       className="relative inline-flex items-center justify-center mx-auto
@@ -19,5 +21,6 @@ export default function BookButton({ arg = "trial" }: { arg?: string }) {
                          animate-[shimmer_2s_infinite]" />
       </span>
     </button>
+   </Link>
   );
 }

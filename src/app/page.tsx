@@ -7,6 +7,7 @@ import MentorshipSection from "./components/Card";
 import CertifiedSection from "./components/CertifiedSection";
 import CertifiedSectionWrapper from "./components/CertifiendWrapper";
 import WhyRobotics from "./components/WhyRobotics";
+import TechBanner from "./components/TechBanner";
 export type Card = 
     {
         title:string,subtitle:string,subCards:{
@@ -64,10 +65,11 @@ export default function Home() {
 
 			<HeroSection/>
 			<VideoComponent/>
-			<SwiperSection/>
       <WhyRobotics />
 			<MentorshipSection card={cards}/>
 			<CertifiedSectionWrapper/>
+			<SwiperSection/>
+      <TechBanner/>
 			<PricingSection/>
 			{/* overflow tag */}
 	

@@ -1,7 +1,10 @@
 import React from "react";
+import BookButton from "./BookButton";
 
 export default function VideoComponent() {
   return (
+    <div className="flex flex-col ">
+    
     <div className="flex flex-col md:flex-row w-full md:min-h-auto pr-5 overflow-x-hidden">
       
       <div
@@ -18,13 +21,18 @@ export default function VideoComponent() {
 
       <div className="mx-5 mt-5 w-full md:max-w-[30vw]">
         <h1 className="text-3xl md:text-5xl font-bold">
-          Lorem ipsum dolor sit amet consectetur.
+          What Human can do in hours, AI can do in seconds
         </h1>
         <h3 className="mt-5">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero fugiat illo delectus tempora necessitatibus m
         </h3>
+          
       </div>
 
     </div>
+    <div className=" p-5 text-center ">
+      <BookButton/>
+    </div>
+</div>
   );
 }

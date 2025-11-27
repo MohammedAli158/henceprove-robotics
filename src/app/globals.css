@@ -9,6 +9,10 @@
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
+.futura {
+  font-family: "FuturaPT", sans-serif;
+}
+
 
 @theme inline {
 	--color-background: var(--background);
