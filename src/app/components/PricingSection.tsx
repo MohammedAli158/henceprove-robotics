@@ -37,15 +37,15 @@ const handleMouseLeave = (index:number)=>{
 
   return (
     <section className="min-h-[55vh] futura" >
-      <div className="flex gap-10 p-5 m-5" >
+      <div className="flex flex-col md:flex-row gap-10 p-5 m-5" >
         {
           cards.map((card,i)=>{
-            return <div className={"max-w-[30vw] min-h-[75vh] shadow-[0_4px_10px_rgba(0,0,0,0.20)] transition-all duration-300 ease-out " +
+            return <div className={"md:max-w-[30vw] p-5  md:min-h-[75vh] shadow-[0_4px_10px_rgba(0,0,0,0.20)] transition-all duration-300 ease-out " +
     (hoverStates[i] ? "scale-110" : "scale-100") } key={i} onMouseEnter={()=>handleMouseEnter(i)} onMouseLeave={()=>handleMouseLeave(i)} >
               <div className={" relative flex flex-col min-h-[45%] bg-[#fff4e8]  " +(hoverStates[i] ? "bg-orange-400 text-white" : "scae-100")} >
 
                 <p className="font-bold text-4xl p-5 m-5" >{card.title}</p>
-                <span className="pl-5 ml-5 absolute left-5 bottom-5" >{card.price}/-</span>
+                <span className="pl-5 ml-5 absolute left-5 bottom-5 hidden md:block " >{card.price}/-</span>
                 </div>
                 <div>
                   <h1 className="p-5 ml-5 font-bold text-2xl" >Curriculum Includes:</h1>
