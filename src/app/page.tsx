@@ -60,7 +60,7 @@ export default function Home() {
   }
 ];
 	return (
-		<div className="" >
+		<div className="dark:text-black" >
 			
 
 			<HeroSection/>
