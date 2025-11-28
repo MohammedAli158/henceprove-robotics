@@ -44,12 +44,12 @@ export default function CertifiedSection() {
     {
       title: "Certified Young Creator",
       desc: "Demonstrated creativity, discipline, and futuristic thinking throughout the sessions."
-    },
+    }
   ];
 
   return (
-    <section className="min-w-full pt-5 overflow-visible">
-      <div className="w-screen max-w-none overflow-visible">
+    <section className="w-full pt-5 overflow-hidden">
+      <div className="w-full overflow-hidden">
         <Swiper
           breakpoints={{
             0: { slidesPerView: 1 },
@@ -57,7 +57,7 @@ export default function CertifiedSection() {
             640: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 4 },
-            1280: { slidesPerView: 4 },
+            1280: { slidesPerView: 4 }
           }}
           spaceBetween={20}
           loop={true}
@@ -66,21 +66,21 @@ export default function CertifiedSection() {
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true,
+            pauseOnMouseEnter: true
           }}
           modules={[Autoplay, FreeMode]}
           className="w-full"
           centeredSlides={false}
           slidesOffsetBefore={0}
           slidesOffsetAfter={0}
-          style={{ overflow: "visible", padding: 0, margin: 0 }}
+          style={{ overflow: "hidden", padding: 0, margin: 0 }}
         >
           {images.map((img, index) => (
-            <SwiperSlide key={index} style={{ overflow: "visible" }}>
-              <div className="flex flex-col border border-white bg-white shadow-[0_20px_30px_-10px_rgba(0,0,0,0.15)] overflow-visible min-h-[60vh]">
+            <SwiperSlide key={index} style={{ overflow: "hidden" }}>
+              <div className="flex flex-col border border-white bg-white shadow-[0_20px_30px_-10px_rgba(0,0,0,0.15)] overflow-hidden min-h-[60vh]">
 
                 {/* IMAGE */}
-                <div className="w-full aspect-square">
+                <div className="w-full aspect-square overflow-hidden">
                   <Image
                     src={img}
                     alt={content[index].title}
@@ -88,14 +88,16 @@ export default function CertifiedSection() {
                   />
                 </div>
 
-                {/* TITLE & DESCRIPTION */}
+                {/* TITLE */}
                 <p className="text-black font-bold px-4 py-2">
                   {content[index].title}
                 </p>
 
+                {/* DESCRIPTION */}
                 <p className="px-4 py-2 text-sm">
                   {content[index].desc}
                 </p>
+
               </div>
             </SwiperSlide>
           ))}
