@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import { FaBrain, FaRobot, FaDatabase, FaLightbulb, FaCogs } from "react-icons/fa";
 import { MdOutlineDeveloperMode } from "react-icons/md";
+import { ResponsiveContainer } from "recharts";
 import { GiBrain, GiCircuitry } from "react-icons/gi";
 
 const skillsWithIcons = [
@@ -43,38 +44,36 @@ export default function WhyRobotics() {
         <h1 className="text-5xl font-bold text-center mb-10" >Why AI and Robotics for children?</h1>
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Bar Chart */}
-        <div className="min-w-[55vw] md:min-w-[40vw]">
-  <h2 className="text-lg font-bold mb-1">Age vs Learning Capability</h2>
-  <p className="text-gray-500 mb-4">
-    Different skills peak at different stages — each bar shows how a child’s strengths evolve.
-  </p>
+<div className="w-full overflow-x-auto">
+  <div className="min-w-[55vw] md:min-w-[40vw]">
+    <h2 className="text-lg font-bold mb-1">Age vs Learning Capability</h2>
+    <p className="text-gray-500 mb-4">
+      Different skills peak at different stages — each bar shows how a child’s strengths evolve.
+    </p>
 
-  <BarChart
-    width={360}
-    height={300}
-    data={data}
-    barGap={20} 
-  >
-    <CartesianGrid strokeDasharray="3 3" opacity={0.15} />
-    <XAxis dataKey="name" label={{ value: "Age Range", position: "insideBottom", dy: 10 }} />
-    <YAxis label={{ value: "Capability Level", angle: -90, position: "insideLeft", dx: -10 }} />
-
-    {/* <Legend/> */}
-
-    <Bar dataKey="Orange" fill="#ff7a00" animationDuration={1200}>
-      <LabelList dataKey="OrangeLabel" position="top" />
-    </Bar>
-    <Bar dataKey="Blue" fill="#3b82f6" animationDuration={1200}>
-      <LabelList dataKey="BlueLabel" position="top" />
-    </Bar>
-    <Bar dataKey="Purple" fill="#a855f7" animationDuration={1200}>
-      <LabelList dataKey="PurpleLabel" position="top" />
-    </Bar>
-    <Bar dataKey="Green" fill="#22c55e" animationDuration={1200}>
-      <LabelList dataKey="GreenLabel" position="top" />
-    </Bar>
-  </BarChart>
+    <BarChart width={360} height={300} data={data} barGap={20}>
+      <CartesianGrid strokeDasharray="3 3" opacity={0.15} />
+      <XAxis dataKey="name" label={{  position: "insideBottom", dy: 10 }} />
+      <YAxis label={{  angle: -90, position: "insideLeft", dx: -10 }} />
+      
+      <Bar dataKey="Orange" fill="#ff7a00" animationDuration={1200}>
+        <LabelList dataKey="OrangeLabel" position="top" />
+      </Bar>
+      <Bar dataKey="Blue" fill="#3b82f6" animationDuration={1200}>
+        <LabelList dataKey="BlueLabel" position="top" />
+      </Bar>
+      <Bar dataKey="Purple" fill="#a855f7" animationDuration={1200}>
+        <LabelList dataKey="PurpleLabel" position="top" />
+      </Bar>
+      <Bar dataKey="Green" fill="#22c55e" animationDuration={1200}>
+        <LabelList dataKey="GreenLabel" position="top" />
+      </Bar>
+    </BarChart>
+  </div>
 </div>
+
+
+
 
 
         {/* Description */}
