@@ -11,8 +11,7 @@ export default function Navbar() {
         shadow-[0_4px_10px_rgba(0,0,0,0.25)]
         backdrop-blur-md bg-white/30 dark:bg-black/30
         relative
-      "
-    >
+      ">
       {/* LEFT SECTION — LOGO */}
       <div className="text-lg font-semibold text-black dark:text-white">
         <Link href="/">HenceProve<span className='text-lg font-semibold text-orange-500' >Robotics</span></Link>
@@ -23,10 +22,9 @@ export default function Navbar() {
         className="
           hidden md:flex gap-6 text-sm font-medium
           absolute left-1/2 -translate-x-1/2
-        "
-      >
+        ">
         <Link href="/about-us" className='hover:text-red' >About Us</Link>
-        <Link href="/" className='hover:text-red' >Dashboard</Link>
+        <Link href="/dashboard" className='hover:text-red' >Dashboard</Link>
         <Link href="/get-courses" className='hover:text-red' >Get Courses</Link>
       </div>
 
@@ -44,7 +42,7 @@ export default function Navbar() {
           "
           placeholder="Search anything.."
         />
-        <div className="cursor-pointer font-medium">Login</div>
+        <Link href={"/login"} className="cursor-pointer font-medium">Login</Link>
       </div>
     </div>
   )

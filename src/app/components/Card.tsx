@@ -1,43 +1,49 @@
 "use client";
 import type { Card } from "../page";
 
-export default function CardSection({ card }: { card: Card }) { 
+export default function CardSection({ card }: { card: Card }) {
   const bg = ["bg-blue-100", "bg-green-100", "bg-yellow-100", "bg-red-100"];
 
   return (
-    <section className="flex flex-col justify-center items-center my-8 w-full px-4 overflow-x-hidden">
-      <div className="md:w-full">
-        {card.map((c, i) => {
-          return (
-            <div
-              key={i}
-              className={
-                "w-full max-w-5xl box-border rounded-lg p-6 m-4 hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row gap-6 md:items-center " +
-                bg[i % bg.length]
-              }
-            >
-              <div className="flex flex-col md:w-1/2 w-full">
-                <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center">{c.title}</h2>
-                <p className="text-gray-600">{c.subtitle}</p>
-              </div>
+    <div className=" flex justify-center my-8">
+      <div className=" max-w-auto  flex flex-col gap-6">
+        {card.map((c, i) => (
+          <div
+            key={i}
+            className={
+              "  overflow-hidden rounded-xl p-5 shadow-sm flex flex-col md:flex-row gap-6 " +
+              bg[i % bg.length]
+            }
+          >
+            {/* LEFT */}
+            <div className="flex flex-col md:w-1/2 min-w-0">
+              <h2 className="text-xl md:text-3xl font-bold mb-3 text-center md:text-left">
+                {c.title}
+              </h2>
 
-              <div className="flex flex-col md:w-1/2 w-full gap-4">
-                {c.subCards.map((sc, idx) => {
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-xl p-4 shadow-sm flex flex-col w-full"
-                    >
-                      <h3 className="text-lg md:text-xl font-semibold">{sc.title}</h3>
-                      <p className="text-gray-500">{sc.description}</p>
-                    </div>
-                  );
-                })}
-              </div>
+              <p className="text-gray-700 text-sm md:text-base break-words leading-relaxed">
+                {c.subtitle}
+              </p>
             </div>
-          );
-        })}
+
+            {/* RIGHT */}
+            <div className="flex flex-col md:w-1/2  gap-4 min-w-0">
+              {c.subCards.map((sc, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-lg p-4 shadow-sm  min-w-0"
+                >
+                  <h3 className="text-lg font-semibold mb-1">{sc.title}</h3>
+
+                  <p className="text-gray-600 text-sm break-words leading-relaxed">
+                    {sc.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

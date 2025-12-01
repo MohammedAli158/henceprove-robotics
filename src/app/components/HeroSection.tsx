@@ -5,7 +5,7 @@ import Bacha from "../../../public/Screenshot (60).png";
 
 export default function HeroSection() {
   return (
-    <div className="relative flex flex-col md:flex-row bg-[#f9fafb] min-h-[90vh] rounded-md mb-5">
+    <div className="relative flex flex-col w-[81vw] md:w-full md:flex-row bg-[#f9fafb] min-h-[90vh] rounded-md mb-5">
 
       {/* TEXT SECTION */}
       <div className="flex flex-col mt-10 md:mt-20 md:ml-10 font-bold flex-1">

@@ -40,7 +40,7 @@ GreenLabel:"36"
 
 export default function WhyRobotics() {
   return (
-    <section className="w-full flex flex-col items-center bg-[#f9fafb] py-8">
+    <section className="w-[81vw] md:w-full flex flex-col items-center bg-[#f9fafb] py-8">
         <h1 className="text-5xl font-bold text-center mb-10" >Why AI and Robotics for children?</h1>
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Bar Chart */}

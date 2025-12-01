@@ -5,7 +5,7 @@ export default function VideoComponent() {
   return (
     <div className="flex flex-col ">
     
-    <div className="flex flex-col md:flex-row w-full md:min-h-auto pr-5 overflow-x-hidden">
+    <div className="flex flex-col md:flex-row  w-[81vw] md:w-full md:min-h-auto pr-5 overflow-x-hidden">
       
       <div
         className="
