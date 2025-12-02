@@ -18,7 +18,7 @@ export default function Dashboard(){
     }
 ]
     return (
-        <section className="m-5 p-5" >
+        <section className="m-5 ml-15 p-5" >
             <div className="flex gap-5">
                 {
                     titles.map((t,i)=>{

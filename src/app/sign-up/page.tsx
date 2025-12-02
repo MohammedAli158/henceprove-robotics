@@ -86,7 +86,7 @@ export default function SignUp() {
           <UniversalButton arg="Submit" />
         </button>
 
-        <div className="mt-10 p-5 bg-gray-500 w-full sm:w-85 z-5 rounded-full">
+        <div className="mt-10 p-5 bg-gray-100 w-full sm:w-85 z-5 rounded-full">
           <div
             className="relative flex pr-10 text-black sm:text-white"
             onClick={handleGoogleAuth}

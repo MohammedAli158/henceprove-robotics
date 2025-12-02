@@ -83,7 +83,7 @@ export default function LoginPage() {
 
         <div
           className="mt-10 p-5 w-full rounded-full 
-                     bg-gray-300 md:bg-gray-500 cursor-pointer"
+                     bg-gray-100 md:bg-gray-500 cursor-pointer"
           onClick={handleGoogleAuth}
         >
           <div className="relative flex text-black md:text-white pr-10">
