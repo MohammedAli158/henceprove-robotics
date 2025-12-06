@@ -4,9 +4,9 @@ import React from "react";
 
 export default function UniversalButton({ arg = "trial" }: { arg?: string }) {
   return (
-   <Link href="/" >
-    <button
-      type="button"
+   <div href="/" >
+    <div
+      
       className="relative inline-flex items-center justify-center mx-auto
                  text-white font-bold px-6 py-3  bg-orange-400
                  overflow-hidden"
@@ -20,7 +20,7 @@ export default function UniversalButton({ arg = "trial" }: { arg?: string }) {
                          bg-gradient-to-r from-transparent via-white/30 to-transparent
                          animate-[shimmer_2s_infinite]" />
       </span>
-    </button>
-   </Link>
+    </div>
+   </div>
   );
 }

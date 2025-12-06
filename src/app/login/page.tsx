@@ -6,9 +6,11 @@ import bg from "../../../public/bgg.png";
 import logo from "../../../public/icons8-google-logo-48.png";
 import Link from "next/link";
 import UniversalButton from "../components/UniversalButton";
+import axios from "axios"
+import toast from "react-hot-toast";
 
 export default function LoginPage() {
-  const [username, setUsername] = useState<string>("");
+  const [email,setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const handlePasswordVisibility = () => {
@@ -16,7 +18,36 @@ export default function LoginPage() {
     passwordInputTag.type = passwordInputTag.type === "text" ? "password" : "text";
   };
 
-  const handleSubmit = () => {};
+const handleSubmit = () => {
+  if (!email || !email.includes("@")) {
+    toast.error("Bruh… enter a valid email.");
+    return;
+  }
+
+  // password check (minimum 6 chars, up to you)
+  if (!password || password.length < 6) {
+    toast.error("Password must be at least 6 characters.");
+    return;
+  }
+
+  toast.loading("Creating your account...");
+
+  axios
+    .post("/api/auth/login", { email, password })
+    .then((res) => {
+      toast.success("Account created! Check your email to verify.");
+      console.log(res.data);
+    })
+    .catch((err) => {
+      const msg =
+        err?.response?.data?.error || "Signup failed. Try again later.";
+      toast.error(msg);
+    })
+    .finally(() => {
+      toast.dismiss();
+    });
+};
+
   const handleGoogleAuth = () => {};
 
   return (
@@ -43,15 +74,15 @@ export default function LoginPage() {
       <div className="flex flex-col items-center justify-center w-full max-w-[380px]">
 
         <input
-          type="text"
-          value={username}
-          placeholder="Username"
+          type="email"
+          value={email}
+          placeholder="Email"
           className="mb-5 h-12 w-full rounded-md pl-5 border
                      bg-white text-black placeholder:text-black
                      md:bg-transparent md:text-white md:placeholder:text-white 
                      border-gray-400 md:border-white border-none
                      focus:outline-none"
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <div className="relative w-full">
@@ -77,7 +108,7 @@ export default function LoginPage() {
           </span>
         </div>
 
-        <button onClick={handleSubmit} className="mt-5 w-full flex justify-center">
+        <button onClick={handleSubmit} type="button" className="mt-5 w-full flex justify-center">
           <UniversalButton arg="Submit" />
         </button>
 

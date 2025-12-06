@@ -1,20 +1,22 @@
+"use client"
+import Link from "next/link"
 import BookButton from "../components/BookButton"
 import UniversalButton from "../components/UniversalButton"
 
 export default function Dashboard(){
     const bg = ["bg-green-100","bg-orange-100","bg-blue-100"]
     const text =["text-green-600","text-orange-600","text-blue-600"]
-    const titles = ["My Courses","My Bots","Free Courses"]
+    const titles = [{title:"My Courses",href:"/profile/courses"},{title:"My Bots",href:"/profile"},{title:"Free Courses",href:"/dashboard/offering/free-courses"}]
     const count = [0,0,1]
     const availablelCourses = [{
-        title:"Foundational Electronics Kits",stages:5, age:5, projects:55,description:"lorem ipsum dolor enum es met"
+        title:"Foundational Electronics Kits",stages:5, age:5, projects:55,description:"lorem ipsum dolor enum es met",href:"/dashboard/offering/foundational"
     },{
-        title:"Stage Courses",stages:5,age:5,projects:65,description:"Iam a big fan of henceprove robotics "
+        title:"Stage Courses",stages:5,age:5,projects:65,description:"Iam a big fan of henceprove robotics ",href:"/dashboard/offering/stage-courses"
     },{
-        title:"Mini Kits",stages:6,age:6, projects:55,description:"Iam a big fian of henceo fhaoiehf aksdlh dskf kdf a hjkdh"
+        title:"Mini Kits",stages:6,age:6, projects:55,description:"Iam a big fian of henceo fhaoiehf aksdlh dskf kdf a hjkdh",href:"/dashboard/offering/mini-kits"
     },{
         
-        title:"Mini Kits",stages:6,age:6, projects:55,description:"Iam a big fian of henceo fhaoiehf aksdlh dskf kdf a hjkdh"
+        title:"Mini Kits",stages:6,age:6, projects:55,description:"Iam a big fian of henceo fhaoiehf aksdlh dskf kdf a hjkdh",href:"/dashboard/offering/mini-kits"
     }
 ]
     return (
@@ -22,11 +24,11 @@ export default function Dashboard(){
             <div className="flex gap-5">
                 {
                     titles.map((t,i)=>{
-                        return <div key={i} className={"shadow-[0_4px_10px_rgba(0,0,0,0.25)] rounded-md relative min-w-[20vw] min-h-[25vh] pl-5 pt-2  "  +(bg[i])} >
+                        return<Link href={t.href}  key={i}> <div className={"  shadow-[0_4px_10px_rgba(0,0,0,0.25)] rounded-md relative min-w-[20vw] min-h-[25vh] pl-5 pt-2  "  +(bg[i])} >
                             <p className={"text-5xl absolute bottom-15 " +(text[i])}>{count[i]}</p>
                             <p className={"absolute right-5 top-5 text-5xl "+ (text[i])} >{"->"}</p>
-                            <h1 className={"text-xl absolute bottom-5 "} >{t}</h1>
-                        </div>
+                            <h1 className={"text-xl absolute bottom-5 "} >{t.title}</h1>
+                        </div></Link>
                     })
                 }
             </div>
@@ -37,9 +39,11 @@ export default function Dashboard(){
      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
      >
      {availablelCourses.map((k, i) => {
-         return (
+        console.log(k.href);
+        
+             return<Link key={i} href={k.href} >
              <div
-             key={i}
+            
              className={
                  "mt-5 max-w-[25vw] p-5 shadow-[0_4px_10px_rgba(0,0,0,0.25)] " +
                  bg[i % 3]
@@ -69,8 +73,8 @@ export default function Dashboard(){
              </div>
            </div>
              
-<div className="text-center"><UniversalButton arg="Get to know" /></div>         </div>
-       );
+<div className="text-center"><UniversalButton arg="Get to know" /></div>         </div></Link>
+       ;
      })}
    </div>
 </div>

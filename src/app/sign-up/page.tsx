@@ -1,33 +1,60 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+
+import Image from "next/image";
+import React, { useState } from "react";
 import bg from "../../../public/bgg.png";
 import logo from "../../../public/icons8-google-logo-48.png";
 import Link from "next/link";
-import Image from "next/image";
 import UniversalButton from "../components/UniversalButton";
+import axios from "axios"
+import toast from "react-hot-toast";
 
-export default function SignUp() {
-  const [username, setUsername] = useState<string>("");
+export default function SignUpPage() {
+  const [email,setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
 
   const handlePasswordVisibility = () => {
     const passwordInputTag = document.getElementById("password") as HTMLInputElement;
-    if (passwordInputTag.type == "text") {
-      passwordInputTag.type = "password";
-    } else {
-      passwordInputTag.type = "text";
-    }
+    passwordInputTag.type = passwordInputTag.type === "text" ? "password" : "text";
   };
 
-  const handleSubmit = () => {};
+const handleSubmit = () => {
+  if (!email || !email.includes("@")) {
+    toast.error("Bruh… enter a valid email.");
+    return;
+  }
+
+  // password check (minimum 6 chars, up to you)
+  if (!password || password.length < 6) {
+    toast.error("Password must be at least 6 characters.");
+    return;
+  }
+
+  toast.loading("Creating your account...");
+
+  axios
+    .post("/api/auth/signup", { email, password })
+    .then((res) => {
+      toast.success("Account created! Check your email to verify.");
+      console.log(res.data);
+    })
+    .catch((err) => {
+      const msg =
+        err?.response?.data?.error || "Signup failed. Try again later.";
+      toast.error(msg);
+    })
+    .finally(() => {
+      toast.dismiss();
+    });
+};
+
   const handleGoogleAuth = () => {};
 
   return (
-    <section className="p-5 relative flex flex-col justify-center items-center min-h-screen sm:min-h-[74vh]">
+    <section className="relative p-5 flex flex-col justify-center items-center min-h-[74vh] bg-white md:bg-transparent">
 
-      <div className="hidden sm:block">
+      {/* Image now behaves EXACTLY like SignUp */}
+      <div className="hidden md:block">
         <Image
           src={bg}
           alt="background"
@@ -36,75 +63,75 @@ export default function SignUp() {
         />
       </div>
 
-      <div className="font-bold text-3xl sm:text-5xl mb-5 pb-5 relative text-black sm:text-white text-center">
+      <div className="font-bold text-4xl md:text-5xl mb-5 pb-5 relative 
+                      text-black md:text-white text-center">
         Welcome to HENCEPROVE{" "}
-        <span className="font-bold text-orange-500">ROBOTICS</span>
+        <span className="text-orange-500">
+          ROBOT<span className="text-black">ICS</span>
+        </span>
       </div>
 
-      <div className="flex flex-col items-center justify-center w-full max-w-sm sm:max-w-none">
+      <div className="flex flex-col items-center justify-center w-full max-w-[380px]">
 
         <input
-          type="text"
-          value={username}
-          placeholder="Username"
-          className="relative h-10 w-full sm:w-85 mb-5 rounded-md pl-5 focus:outline-none
-                     text-black placeholder:text-black border-black
-                     sm:text-white sm:placeholder:text-white sm:border-white"
-          onChange={(e) => setUsername(e.target.value)}
+          type="email"
+          value={email}
+          placeholder="Email"
+          className="mb-5 h-12 w-full rounded-md pl-5 border
+                     bg-white text-black placeholder:text-black
+                     md:bg-transparent md:text-white md:placeholder:text-white 
+                     border-gray-400 md:border-white border-none
+                     focus:outline-none"
+          onChange={(e) => setEmail(e.target.value)}
         />
 
-        <div className="relative w-full sm:w-85">
+        <div className="relative w-full">
           <input
             type="text"
             id="password"
             value={password}
             placeholder="Password"
-            className="relative h-10 w-full sm:w-85 rounded-md pl-5 focus:outline-none
-                       text-black placeholder:text-black border-black
-                       sm:text-white sm:placeholder:text-white sm:border-white"
+            className="h-12 w-full rounded-md pl-5 border border-none
+                       bg-white text-black placeholder:text-black
+                       md:bg-transparent md:text-white md:placeholder:text-white 
+                       border-gray-400 md:border-white
+                       focus:outline-none"
             onChange={(e) => setPassword(e.target.value)}
           />
+
           <span
-            className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+            className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer 
+                       text-black md:text-white"
             onClick={handlePasswordVisibility}
           >
             👁️
           </span>
         </div>
 
-        <input
-          type="text"
-          value={email}
-          placeholder="Email"
-          className="relative h-10 w-full sm:w-85 mt-5 mb-5 rounded-md pl-5 focus:outline-none
-                     text-black placeholder:text-black border-black
-                     sm:text-white sm:placeholder:text-white sm:border-white"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <button onClick={handleSubmit}>
+        <button onClick={handleSubmit} type="button" className="mt-5 w-full flex justify-center">
           <UniversalButton arg="Submit" />
         </button>
 
-        <div className="mt-10 p-5 bg-gray-100 w-full sm:w-85 z-5 rounded-full">
-          <div
-            className="relative flex pr-10 text-black sm:text-white"
-            onClick={handleGoogleAuth}
-          >
+        <div
+          className="mt-10 p-5 w-full rounded-full 
+                     bg-gray-100 md:bg-gray-500 cursor-pointer"
+          onClick={handleGoogleAuth}
+        >
+          <div className="relative flex text-black md:text-white pr-10">
             Continue with Google
             <Image
               src={logo}
               height={35}
               alt="Google"
-              className="absolute top-1/2 -translate-y-1/2 right-0"
+              className="absolute right-0 top-1/2 -translate-y-1/2"
             />
           </div>
         </div>
 
-        <div className="text-black sm:text-white mt-5 text-center">
-          Already have an account?{" "}
+        <div className="mt-5 text-black md:text-white">
+          already have an account? 
           <Link href="/login" className="underline">
-            Log in
+           Login
           </Link>
         </div>
       </div>

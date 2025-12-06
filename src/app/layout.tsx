@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   let path = usePathname();
   path = "/" +  (path).split("/")[1]
-  const bare = ['/dashboard']
+  const bare = ['/dashboard','/profile']
   const isBare = bare.includes(path);
   
   return (

@@ -9,8 +9,8 @@ export default function VerticalNav() {
   const path = usePathname()
   console.log(path)
   const items = [
-    { href: "/", icon: <FiGrid />, label: "Dashboard" },
-    { href: "/get-courses", icon: <FiShoppingCart />, label: "Our Offering" },
+    { href: "/dashboard", icon: <FiGrid />, label: "Dashboard" },
+    { href: "/courses", icon: <FiShoppingCart />, label: "Our Offering" },
     { href: "/dashboard/community", icon: <FiUsers />, label: "Community" },
     { href: "/dashboard/events", icon: <FiCalendar />, label: "Events" },
     { href: "/dashboard/ailab", icon: <SiOpenai />, label: "AI" },
