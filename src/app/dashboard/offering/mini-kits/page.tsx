@@ -54,22 +54,26 @@ export default function MiniKits() {
   ];
 
   return (
-    <div className="ml-15">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 min-h-screen">
-        {courses.map((course, i) => (
-          <Link
-            key={i}
-            href={`/dashboard/offering/mini-kits/${course.slug}`}
-          >
-            <CourseCard
-              title={course.title}
-              description={course.description}
-              modules={course.modules}
-              sessions={course.sessions}
-            />
-          </Link>
-        ))}
-      </div>
-    </div>
+<div className="ml-15">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 content-start">
+    {courses.map((course, i) => (
+      <Link
+        key={i}
+        href={`/dashboard/offering/mini-kits/${course.slug}`}
+        className="block h-full"
+      >
+        <div className="h-full flex flex-col">
+          <CourseCard
+            title={course.title}
+            description={course.description}
+            modules={course.modules}
+            sessions={course.sessions}
+          />
+        </div>
+      </Link>
+    ))}
+  </div>
+</div>
+
   );
 }

@@ -36,19 +36,21 @@ export default function Foundational() {
   ];
 
   return (
-    <div className="pl-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 min-h-screen">
-        {courses.map((course, i) => (
-          <Link href={course.href} key={i}>
-            <CourseCard
-              title={course.title}
-              description={course.description}
-              modules={course.modules}
-              sessions={course.sessions}
-            />
-          </Link>
-        ))}
-      </div>
-    </div>
+<div className="pl-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 content-start">
+    {courses.map((course, i) => (
+      <Link href={course.href} key={i} className="block">
+        <CourseCard
+          title={course.title}
+          description={course.description}
+          modules={course.modules}
+          sessions={course.sessions}
+        />
+      </Link>
+    ))}
+  </div>
+</div>
+
+
   );
 }

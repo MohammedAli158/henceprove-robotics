@@ -1,6 +1,15 @@
 "use client"
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 export default function ProfileNavbar({line,setLine}) {
+  const url = usePathname();
+  if (url.split("/")[2]=="courses") {
+    setLine("My Courses")
+  } if(url.split("/")[2]=="change-password"){
+    setLine("Change Password")
+  } if(url.split("/")[2]=="transactions"){
+    setLine("Transactions")
+  }
   
   return (
 
@@ -13,6 +22,7 @@ export default function ProfileNavbar({line,setLine}) {
         {/* Tabs */}
 
 <div className="flex space-x-6 mt-3 border-b border-gray-200 pb-2">
+
   <Link
     href="/profile"
     className={" font-medium" + (line === "About" ? " border-b-2 border-orange-600 text-orange-600 " : "")}
@@ -23,7 +33,7 @@ export default function ProfileNavbar({line,setLine}) {
 
   <Link
     href="/profile/courses"
-    className={"text-gray-600 font-medium hover:text-orange-600" + (line === "My Courses" ? "border-b-2 border-orange-600 text-orange-600" : "")}
+    className={"text-gray-600 font-medium hover:text-orange-600 " + (line === "My Courses" ? "border-b-2 border-orange-600 text-orange-600 " : "")}
     onClick={() =>setLine("My Courses") }
   >
     My Courses
@@ -43,6 +53,9 @@ export default function ProfileNavbar({line,setLine}) {
     onClick={() =>setLine("Transactions") }
   >
     Transactions
+  </Link>
+  <Link className="text-gray-600 font-medium hover:text-orange-600" href={"/dashboard"} >
+      Dashboard
   </Link>
 </div>
       </div>

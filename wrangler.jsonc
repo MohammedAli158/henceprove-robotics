@@ -17,7 +17,14 @@
 	},
 	"observability": {
 		"enabled": true
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "drizzle_robotics",
+			"database_name": "drizzle-robotics",
+			"database_id": "db5b2532-7e26-4986-9da7-aa715c34d2be"
+		}
+	]
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
