@@ -1,7 +1,8 @@
 "use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-export default function ProfileNavbar({line,setLine}) {
+export default function ProfileNavbar({line,setLine}:{line: string;
+  setLine: React.Dispatch<React.SetStateAction<string>>;}) {
   const url = usePathname();
   if (url.split("/")[2]=="courses") {
     setLine("My Courses")

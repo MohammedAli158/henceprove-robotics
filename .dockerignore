@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+Dockerfile.prod
+Dockerfile.dev
+.git
+.gitignore
+.vercel
+.next
+.cache
+dist
+.env
+.env.local

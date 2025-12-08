@@ -2,8 +2,14 @@
 
 import { useParams } from "next/navigation";
 
+type MiniKit = {
+  title: string;
+  about: string;
+  whatYouWillLearn: string[];
+};
+
 export default function MiniKitsPage() {
-  const miniKits = {
+  const miniKits: Record<string, MiniKit> = {
     "basic-electronics": {
       title: "Basic Electronics",
       about:
@@ -13,8 +19,8 @@ export default function MiniKitsPage() {
         "Building simple circuits on a breadboard",
         "Understanding voltage, current, and resistance",
         "Using sensors for small DIY projects",
-        "Safety, polarity, and power basics"
-      ]
+        "Safety, polarity, and power basics",
+      ],
     },
 
     "arduino-starter-pack": {
@@ -26,8 +32,8 @@ export default function MiniKitsPage() {
         "Using digital and analog pins",
         "Working with buzzers, LEDs, and servo motors",
         "Building small automation projects",
-        "Understanding microcontroller workflow"
-      ]
+        "Understanding microcontroller workflow",
+      ],
     },
 
     "medical-electronics-pack": {
@@ -39,8 +45,8 @@ export default function MiniKitsPage() {
         "Working with heart-rate and pulse sensors",
         "Signal filtering and basic data reading",
         "Understanding safe electrical design",
-        "Mini healthcare device prototypes"
-      ]
+        "Mini healthcare device prototypes",
+      ],
     },
 
     "iot-mini-projects": {
@@ -52,8 +58,8 @@ export default function MiniKitsPage() {
         "Reading remote sensor data",
         "Building tiny smart home gadgets",
         "Cloud communication essentials",
-        "Deploying projects to mobile dashboards"
-      ]
+        "Deploying projects to mobile dashboards",
+      ],
     },
 
     "robotics-basics": {
@@ -65,8 +71,8 @@ export default function MiniKitsPage() {
         "Basic motor control",
         "IR/Ultrasonic sensor integration",
         "Simple automation behaviors",
-        "Mini robot construction"
-      ]
+        "Mini robot construction",
+      ],
     },
 
     "python-hardware-pack": {
@@ -78,18 +84,16 @@ export default function MiniKitsPage() {
         "GPIO control using Python",
         "Working with sensors and LEDs",
         "Serial communication basics",
-        "Building Python-controlled hardware demos"
-      ]
-    }
+        "Building Python-controlled hardware demos",
+      ],
+    },
   };
 
-  const{slug} = useParams();
-  const key = slug;
-  const selected = miniKits[key]
+  const { slug } = useParams();
+  const key = slug as string;
+  const selected = miniKits[key];
 
-
-
-  if (!key || !miniKits[key]) {
+  if (!selected) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-xl text-gray-700">Invalid kit selected.</p>
@@ -97,10 +101,9 @@ export default function MiniKitsPage() {
     );
   }
 
-   return (
+  return (
     <div className="min-h-screen p-10 flex justify-center">
       <div className="max-w-4xl w-full bg-white shadow-lg rounded-3xl p-12 border border-gray-200 pl-20">
-
         <h1 className="text-5xl font-bold mb-8 text-orange-500">
           {selected.title}
         </h1>
