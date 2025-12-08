@@ -4,7 +4,7 @@ import React from "react";
 
 export default function UniversalButton({ arg = "trial" }: { arg?: string }) {
   return (
-   <div href="/" >
+   <Link href="/" >
     <div
       
       className="relative inline-flex items-center justify-center mx-auto
@@ -21,6 +21,6 @@ export default function UniversalButton({ arg = "trial" }: { arg?: string }) {
                          animate-[shimmer_2s_infinite]" />
       </span>
     </div>
-   </div>
+   </Link>
   );
 }
